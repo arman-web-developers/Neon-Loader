@@ -3,58 +3,100 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carausal</title>
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body{
-      height: 100vh;
-      display: grid;
-      place-items: center;
-      background-color: #00ccff;
-    }
-    .container-img{
-      width: 60vw;
-      height: 30rem;
-      border-radius: 1rem;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      background-image: url("https://images.pexels.com/photos/5409751/pexels-photo-5409751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-      background-size: cover;
-      animation: gallery 20s linear infinite;
-      animation-direction: alternate;
-    }
+    <title>newton cradle</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background-color: #191825;
+      }
+      .cradle{
+        width: 50rem;
+        aspect-ratio: 1;
+        background-color: transparent;
+        border-top: 2px solid #00ccff;
+        border-radius: 0.5rem;
+        display: flex;
+        gap: 4.5rem;
+        justify-content: center;
+      }
 
-    @keyframes gallery {
-      0%{
-        background-image: url("https://images.pexels.com/photos/8100784/pexels-photo-8100784.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+      div{
+        width: 0.5rem;
+        height: 20rem;
+        background-color: #00ccff;
+        position: relative;
       }
-      20%{
-        background-image: url("https://images.pexels.com/photos/10528234/pexels-photo-10528234.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-      }
-      40%{
-        background-image: url("https://images.pexels.com/photos/4338015/pexels-photo-4338015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
 
+      .cradle div::before{
+        content: "";
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        position: absolute;
+        /* bottom: 0; */
+        top: 90%;
+        left: -2.25rem;
+        background-color: #00ccff;
       }
-      60%{
-        background-image: url("https://images.pexels.com/photos/4338015/pexels-photo-4338015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+      
+      .cradle div:first-child{
+        animation: left 2s linear infinite;
+        transform-origin: top left;
+      }
 
+      .cradle div:last-child{
+        animation: right 2s linear 1s infinite;
+        transform-origin: top left;
       }
-      80%{
-        background-image: url("https://images.pexels.com/photos/1311445/pexels-photo-1311445.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
 
+      @keyframes left {
+        0% {
+          rotate: 0deg;
+        }
+        25% {
+          rotate: 30deg;
+        }
+        50% {
+          rotate: 0deg;
+        }
+        100% {
+          rotate: 0deg;
+        }
       }
-      100%{
-        background-image: url("https://images.pexels.com/photos/2131623/pexels-photo-2131623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
 
+      @keyframes right {
+        0% {
+          rotate: 0deg;
+        }
+        25% {
+          rotate: -30deg;
+        }
+        50% {
+          rotate: 0deg;
+        }
+        100% {
+          rotate: 0deg;
+        }
       }
-    }
-  </style>
+    </style>
   </head>
   <body>
-    <div class="container-img">
+    <div class="cradle">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   </body>
 </html>
